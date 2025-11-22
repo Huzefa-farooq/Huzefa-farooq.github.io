@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,7 +17,20 @@
             background: #222;
             color: white;
             padding: 40px;
-            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+        }
+        .profile-pic {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #fff;
+        }
+        .header-text {
+            text-align: left;
         }
         .section {
             padding: 40px;
@@ -45,8 +59,12 @@
 <body>
 
     <div class="header">
-        <h1>Muhammad Huzefa Farooq</h1>
-        <p>Controls | Automation | Mechatronics | Embedded Systems</p>
+        <img src="1671945576598.jpg" alt="Profile Photo" class="profile-pic">
+
+        <div class="header-text">
+            <h1>Muhammad Huzefa Farooq</h1>
+            <p>Controls | Automation | Instrumentation | Mechatronics | Embedded Systems</p>
+        </div>
     </div>
 
     <div class="section">
@@ -65,7 +83,7 @@
             <img src="images/surgical.jpg" alt="Surgical Project">
             <p>
                 Developed a flexible capacitive force sensor and wireless DAQ for robotic surgical tools, achieving 
-                less than 8 percent error. Designed PCB, calibration workflows, and real-time feedback modules.
+                less than eight percent error. Designed PCB, calibration workflows, and real-time feedback modules.
             </p>
         </div>
 
@@ -73,8 +91,8 @@
             <h3>Autonomous Fruit Plucking Robot</h3>
             <img src="images/fruits.jpg" alt="Fruit Bot">
             <p>
-                Built a mechatronic fruit-picking robot with servo mechanisms and embedded logic. 
-                Won 1st Runner-up at NERC.
+                Built a mechatronic fruit picking robot with a custom mechanical plucking system and embedded logic. 
+                Awarded first runner up at NERC.
             </p>
         </div>
 
@@ -82,7 +100,7 @@
             <h3>Single Active Bridge (SAB) Converter</h3>
             <img src="images/sab.jpg" alt="SAB Converter">
             <p>
-                Modeled and simulated SAB DC–DC converter topology using MATLAB Simulink.
+                Modeled and simulated SAB DC to DC converter topology using MATLAB Simulink.
             </p>
         </div>
 
