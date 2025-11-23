@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -40,18 +39,60 @@
             margin-top: 20px;
             border-radius: 8px;
         }
-        .project img {
-            width: 100%;
-            border-radius: 5px;
-            margin-top: 10px;
-        }
+
         h2 {
             color: #333;
             border-bottom: 2px solid #ddd;
             padding-bottom: 8px;
         }
+
+        /* PROJECT CARD LAYOUT */
         .project {
-            margin-bottom: 40px;
+            margin-bottom: 50px;
+        }
+
+        .project-body {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            align-items: flex-start;
+            margin-top: 10px;
+        }
+
+        .project-image {
+            flex: 1 1 260px;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .project-info {
+            flex: 2 1 320px;
+            font-size: 15px;
+        }
+
+        .project-info p {
+            margin: 5px 0 10px;
+        }
+
+        /* SKILL TAGS */
+        .pill-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 10px 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .pill-list li {
+            background: #f1f3f5;
+            border-radius: 999px;
+            padding: 5px 12px;
+            font-size: 13px;
         }
     </style>
 </head>
@@ -75,52 +116,115 @@
     </div>
 </div>
 
+<div class="section">
+    <h2>About Me</h2>
+    <p>
+       I am a Controls and Automation Engineer with experience in building automation systems, control logic development, and sensor integration. I design automated solutions, develop PCB and data acquisition systems, and work with real-time sensing and instrumentation. I have contributed to award-winning projects in robotics and surgical tools and focus on creating reliable and practical engineering solutions.
+    </p>
+</div>
 
+<div class="section">
+    <h2>Projects</h2>
 
-    <div class="section">
-        <h2>About Me</h2>
-        <p>
-           I am a Controls and Automation Engineer with experience in building automation systems, control logic development, and sensor integration. I design automated solutions, develop PCB and data acquisition systems, and work with real-time sensing and instrumentation. I have contributed to award-winning projects in robotics and surgical tools and focus on creating reliable and practical engineering solutions.
-        </p>
+    <!-- Project 1 -->
+    <div class="project">
+        <h3>Force-Sensor Surgical Instrument</h3>
+        <div class="project-body">
+            <div class="project-image">
+                <img src="images/surgical.jpg" alt="Surgical Project">
+            </div>
+            <div class="project-info">
+                <p><strong>Description:</strong> Developed a flexible capacitive force sensor and wireless data acquisition system for robotic surgical tools with less than eight percent error. Designed PCB, calibration workflows, and real-time feedback modules.</p>
+
+                <p><strong>Skills Used:</strong></p>
+                <ul class="pill-list">
+                    <li>Capacitive sensing</li>
+                    <li>PCB design</li>
+                    <li>Sensor calibration</li>
+                    <li>DAQ development</li>
+                    <li>Signal processing</li>
+                    <li>Mechanical integration</li>
+                </ul>
+
+                <p><strong>Tools Used:</strong></p>
+                <ul class="pill-list">
+                    <li>ESP microcontroller</li>
+                    <li>AD7746 / ADS1115</li>
+                    <li>MATLAB</li>
+                    <li>Proteus</li>
+                    <li>SolidWorks</li>
+                </ul>
+            </div>
+        </div>
     </div>
 
-    <div class="section">
-        <h2>Projects</h2>
+    <!-- Project 2 -->
+    <div class="project">
+        <h3>Autonomous Fruit Plucking Robot</h3>
+        <div class="project-body">
+            <div class="project-image">
+                <img src="images/fruits.jpg" alt="Fruit Bot">
+            </div>
+            <div class="project-info">
+                <p><strong>Description:</strong> Designed and built a mechatronic fruit picking robot with a custom mechanical plucking system and embedded control logic. Served as team lead and secured first runner-up at NERC.</p>
 
-        <div class="project">
-            <h3>Force-Sensor Surgical Instrument</h3>
-            <img src="images/surgical.jpg" alt="Surgical Project">
-            <p>
-                Developed a flexible capacitive force sensor and wireless DAQ for robotic surgical tools, achieving 
-                less than eight percent error. Designed PCB, calibration workflows, and real-time feedback modules.
-            </p>
+                <p><strong>Skills Used:</strong></p>
+                <ul class="pill-list">
+                    <li>Mechanical system design</li>
+                    <li>Motor control</li>
+                    <li>Embedded programming</li>
+                    <li>Control logic development</li>
+                    <li>System integration</li>
+                    <li>Team leadership</li>
+                </ul>
+
+                <p><strong>Tools Used:</strong></p>
+                <ul class="pill-list">
+                    <li>Arduino</li>
+                    <li>DC motors</li>
+                    <li>H-bridge circuits</li>
+                    <li>SolidWorks</li>
+                    <li>MATLAB</li>
+                </ul>
+            </div>
         </div>
-
-        <div class="project">
-            <h3>Autonomous Fruit Plucking Robot</h3>
-            <img src="images/fruits.jpg" alt="Fruit Bot">
-            <p>
-                Built a mechatronic fruit picking robot with a custom mechanical plucking system and embedded logic. 
-                Awarded first runner up at NERC.
-            </p>
-        </div>
-
-        <div class="project">
-            <h3>Single Active Bridge (SAB) Converter</h3>
-            <img src="images/sab.jpg" alt="SAB Converter">
-            <p>
-                Modeled and simulated SAB DC to DC converter topology using MATLAB Simulink.
-            </p>
-        </div>
-
     </div>
 
-    <div class="section">
-        <h2>Contact</h2>
-        <p>Email: huzefa.farooq999@gmail.com</p>
-        <p>LinkedIn: <a href="https://www.linkedin.com/in/muhammad-huzefa-farooq-3354341b1">Visit Profile</a></p>
+    <!-- Project 3 -->
+    <div class="project">
+        <h3>Single Active Bridge (SAB) Converter</h3>
+        <div class="project-body">
+            <div class="project-image">
+                <img src="images/sab.jpg" alt="SAB Converter">
+            </div>
+            <div class="project-info">
+                <p><strong>Description:</strong> Modeled and simulated a single active bridge DC-DC converter for energy storage and vehicle charging applications using MATLAB and Simulink. Implemented phase-shift control and analyzed behavior under different loads.</p>
+
+                <p><strong>Skills Used:</strong></p>
+                <ul class="pill-list">
+                    <li>Power electronics modelling</li>
+                    <li>Converter control</li>
+                    <li>Data analysis</li>
+                    <li>Simulation</li>
+                    <li>MATLAB scripting</li>
+                </ul>
+
+                <p><strong>Tools Used:</strong></p>
+                <ul class="pill-list">
+                    <li>MATLAB</li>
+                    <li>Simulink</li>
+                </ul>
+            </div>
+        </div>
     </div>
+
+</div>
+
+<div class="section">
+    <h2>Contact</h2>
+    <p>Email: huzefa.farooq999@gmail.com</p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/muhammad-huzefa-farooq-3354341b1">Visit Profile</a></p>
+</div>
 
 </body>
 </html>
-
