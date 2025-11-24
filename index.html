@@ -322,74 +322,79 @@
      style="width:75%; display:block; margin:20px auto; border-radius:5px;">
 </div>
 
-<!-- Project 4 -->
+<!-- Project: Battery Fuel Gauge Modeling -->
 <div class="section">
-    <h2>EV Energy Consumption and Battery Pack Modeling</h2>
+    <h2>Battery Fuel Gauge Modeling in MATLAB</h2>
 
     <!-- Tools Used -->
     <h3>Tools Used</h3>
     <ul>
         <li>MATLAB</li>
-        <li>Simulink</li>
     </ul>
 
     <!-- Skills Used -->
     <h3>Skills Used</h3>
     <ul>
-        <li>Vehicle and powertrain modelling</li>
-        <li>Drive cycle simulation (UDDS, US06)</li>
-        <li>Battery pack sizing and SOC estimation</li>
-        <li>Energy efficiency and range analysis</li>
-        <li>Data processing and visualization</li>
+        <li>Battery modelling</li>
+        <li>Numerical integration</li>
+        <li>SOC estimation algorithms</li>
+        <li>Internal resistance estimation</li>
+        <li>Data processing and interpolation</li>
+        <li>Signal analysis and plotting</li>
+        <li>Battery management system concepts</li>
     </ul>
 
     <!-- S.T.A.R Format Content -->
 
     <h3>Situation</h3>
     <p>
-        Accurate prediction of electric vehicle energy consumption and driving range is critical for
-        battery sizing and performance evaluation. Different drive cycles, such as UDDS and US06, impose
-        varying dynamic loads on the vehicle, and the choice of battery pack configuration directly
-        affects current draw, state of charge, and overall efficiency.
+        Modern battery powered systems rely on accurate estimation of internal battery states for safe and reliable
+        operation. States such as state of charge, internal resistance, and remaining runtime cannot be measured
+        directly and must be inferred from voltage and current data through a software based battery fuel gauge.
     </p>
 
+   
 
     <h3>Task</h3>
     <p>
-        Model EV energy consumption in MATLAB by simulating real-time power demand over UDDS and US06 drive
-        cycles, and evaluate battery behavior for two pack configurations: Tesla 2170 (96S46P) and 4680
-        (92S9P). Compute pack current, SOC, and efficiency and use these results to estimate practical
-        driving range for each configuration.
+        The task was to implement a complete battery fuel gauge model in MATLAB using experimental voltage, current,
+        and time data. This included estimating battery capacity, generating a pseudo OCV curve, creating a
+        voltage based SOC lookup, estimating internal resistance, computing SOC through Coulomb counting, and
+        predicting time to shutdown under a given load profile.
     </p>
 
     <h3>Action</h3>
     <p>
-        Built a MATLAB-based model of traction power that included aerodynamic drag, rolling resistance,
-        inertial effects, regenerative braking, and auxiliary loads. Computed battery pack current from
-        drive-cycle power demand and incorporated pseudo OCV–SOC characteristics for the selected cells.
-        Implemented an SOC estimator and simulated both battery configurations across UDDS and US06, then
-        analyzed current profiles, SOC depletion, and energy consumption for each case.
+        Implemented numerical integration of current to estimate charge and discharge capacity. Constructed an
+        averaged pseudo OCV curve by combining charging and discharging characteristics and used it to build a
+        voltage based SOC lookup. Estimated internal resistance from voltage steps during current pulses and
+        implemented Coulomb counting for SOC tracking with clipping for stability. Finally, combined SOC,
+        internal resistance, and cutoff voltage to estimate remaining time to shutdown, and visualized all
+        intermediate and final results using MATLAB plots.
     </p>
 
-    <h3>Result</h3>
-    <p>
-        Demonstrated how drive-cycle aggressiveness and pack configuration affect current stress, SOC
-        trajectory, and vehicle range. Obtained realistic energy consumption and range estimates for both
-        the 2170 and 4680 pack designs and provided clear comparisons that highlight the trade-offs between
-        capacity, efficiency, and operating conditions.
-    </p>
-
-    <!-- Optional drive-cycle / results image -->
     <img src="P4_Result.PNG"
          alt="OCV Curve"
          style="width:75%; display:block; margin:20px auto; border-radius:5px;">
-   
+    <h3>Result</h3>
+    <p>
+        Delivered a working MATLAB based battery fuel gauge capable of estimating capacity, SOC, internal resistance,
+        and remaining runtime from only voltage and current measurements. The model reproduced expected battery
+        behaviour across the data set and demonstrated how software algorithms inside a battery management system
+        can infer hidden battery states from measurable signals.
+    </p>
+
+    <!-- Link to full report -->
     <p>
         📄 <a href="EV_Battery_Modeling_Report.pdf" target="_blank" style="color:#4da3ff;">
-        View Full Technical Report
+        View Full Project Report
         </a>
     </p>
 </div>
+
+
+
+
 
 
 <div class="section">
