@@ -140,11 +140,58 @@
         height: auto;
     }
 }
+
+        /* Navigation Bar Styling */
+.navbar {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background: #222;
+    padding: 12px 0;
+    display: flex;
+    justify-content: center;
+    gap: 26px;
+    z-index: 1000;
+    border-bottom: 1px solid #444;
+}
+
+.navbar a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.navbar a:hover {
+    color: #4da3ff;
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Mobile responsive navbar */
+@media (max-width: 768px) {
+    .navbar {
+        flex-wrap: wrap;
+        gap: 18px;
+        padding: 10px 0;
+    }
+}
     </style>
 </head>
 
 <body>
-
+<!-- Navigation Bar -->
+<nav class="navbar">
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#experience">Experience</a>
+    <a href="#education">Education</a>
+    <a href="#contact">Contact</a>
+</nav>
 <div class="header">
     <img src="1671945576598.jpg" alt="Profile Photo" class="profile-pic">
 
@@ -165,14 +212,14 @@
     </div>
 </div>
 
-<div class="section">
+<div class="section" id="about">
     <h2>About Me</h2>
     <p>
        I am a Controls and Automation Engineer with experience in building automation systems, control logic development, and sensor integration. I design automated solutions, develop PCB and data acquisition systems, and work with real-time sensing and instrumentation. I have contributed to award-winning projects in robotics and surgical tools and focus on creating reliable and practical engineering solutions.
     </p>
 </div>
 
-<div class="section">
+<div class="section" id="projects">
     <h2>Force Sensing Surgical Instrument for Robotic Surgery</h2>
    
    
@@ -436,12 +483,15 @@
     </p>
 </div>
 
+<div class="section" id="experience">
+    <h2>Experience</h2>
+</div>
 
+<div class="section" id="education">
+    <h2>Education</h2>
+</div>
 
-
-
-
-<div class="section">
+<div class="section" id="contact">
     <h2>Contact</h2>
     <p>Email: huzefa.farooq999@gmail.com</p>
     <p>LinkedIn: <a href="https://www.linkedin.com/in/muhammad-huzefa-farooq-3354341b1">Visit Profile</a></p>
