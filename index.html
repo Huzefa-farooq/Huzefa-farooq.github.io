@@ -96,6 +96,50 @@
             padding: 5px 12px;
             font-size: 13px;
         }
+
+        @media (max-width: 768px) {
+    body {
+        font-size: 15px;
+    }
+
+    .header {
+        flex-direction: column;
+        text-align: center;
+        padding: 24px 16px;
+        gap: 16px;
+    }
+
+    .header-text {
+        text-align: center;
+    }
+
+    .profile-pic {
+        width: 110px;
+        height: 110px;
+        margin-bottom: 4px;
+    }
+
+    .section {
+        padding: 24px 16px;
+        margin-top: 16px;
+        border-radius: 0;
+    }
+
+    /* If you are still using project-body / project-image / project-info anywhere */
+    .project-body {
+        flex-direction: column;
+    }
+
+    .project-image,
+    .project-info {
+        flex: 1 1 100%;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+}
     </style>
 </head>
 
