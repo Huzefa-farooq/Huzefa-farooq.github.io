@@ -1,658 +1,1409 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Muhammad Huzefa Farooq – Portfolio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Muhammad Huzefa Farooq | Controls & Automation Engineer</title>
 
-</div>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background: #f8f9fa;
-        }
-        .header {
-            background: #222;
-            color: white;
-            padding: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 30px;
-        }
-        .profile-pic {
-            width: 130px;
-            height: 130px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid #fff;
-        }
-        .header-text {
-            text-align: left;
-        }
- 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-        .section {
-            padding: 40px;
-            max-width: 900px;
-            margin: auto;
-            background: white;
-            margin-top: 20px;
-            border-radius: 8px;
-        }
+  <style>
+    :root {
+      --bg: #0a0f1f;
+      --bg-soft: #0f172d;
+      --panel: rgba(17, 25, 48, 0.72);
+      --panel-solid: #121b34;
+      --panel-2: #162240;
+      --line: rgba(255, 255, 255, 0.08);
+      --text: #e9f1ff;
+      --muted: #9db0c9;
+      --accent: #4da3ff;
+      --accent-2: #00d4ff;
+      --success: #7ef7c7;
+      --shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+      --radius: 20px;
+      --radius-sm: 14px;
+      --maxw: 1200px;
+    }
 
-        h2 {
-            color: #333;
-            border-bottom: 2px solid #ddd;
-            padding-bottom: 8px;
-        }
-.top-buttons {
-    margin-top: 12px;
-    display: flex;
-    justify-content: center; 
-    gap: 12px;
-}
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-.btn-top {
-    padding: 8px 18px;
-    background: #4da3ff;
-    color: white;
-    text-decoration: none;
-    border-radius: 6px;
-    font-weight: 600;
-    font-size: 14px;
-    transition: 0.2s ease;
-}
+    html {
+      scroll-behavior: smooth;
+    }
 
-.btn-top:hover {
-    background: #2d82d4;
-}
-        /* PROJECT CARD LAYOUT */
-        .project {
-            margin-bottom: 50px;
-        }
-
-        .project-body {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            align-items: flex-start;
-            margin-top: 10px;
-        }
-
-        .project-image {
-            flex: 1 1 260px;
-        }
-
-        .project-image img {
-            width: 100%;
-            height: auto;
-            border-radius: 5px;
-        }
-
-        .project-info {
-            flex: 2 1 320px;
-            font-size: 15px;
-        }
-
-        .project-info p {
-            margin: 5px 0 10px;
-        }
-
-        /* SKILL TAGS */
-        .pill-list {
-            list-style: none;
-            padding: 0;
-            margin: 0 0 10px 0;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
-
-        .pill-list li {
-            background: #f1f3f5;
-            border-radius: 999px;
-            padding: 5px 12px;
-            font-size: 13px;
-        }
-
-        @media (max-width: 768px) {
     body {
-        font-size: 15px;
+      font-family: "Inter", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(77, 163, 255, 0.18), transparent 30%),
+        radial-gradient(circle at top right, rgba(0, 212, 255, 0.12), transparent 25%),
+        linear-gradient(180deg, #08101d 0%, #09101d 35%, #0b1324 100%);
+      color: var(--text);
+      line-height: 1.65;
+      overflow-x: hidden;
     }
 
-    .header {
-        flex-direction: column;
-        text-align: center;
-        padding: 24px 16px;
-        gap: 16px;
-    }
-
-    .header-text {
-        text-align: center;
-    }
-
-    .profile-pic {
-        width: 110px;
-        height: 110px;
-        margin-bottom: 4px;
-    }
-
-    .section {
-        padding: 24px 16px;
-        margin-top: 16px;
-        border-radius: 0;
-    }
-
-    /* If you are still using project-body / project-image / project-info anywhere */
-    .project-body {
-        flex-direction: column;
-    }
-
-    .project-image,
-    .project-info {
-        flex: 1 1 100%;
+    a {
+      color: inherit;
+      text-decoration: none;
     }
 
     img {
-        max-width: 100%;
-        height: auto;
+      max-width: 100%;
+      display: block;
     }
-}
 
-        /* Navigation Bar Styling */
-.navbar {
-    position: sticky;
-    top: 0;
-    width: 100%;
-    background: #222;
-    padding: 12px 0;
-    display: flex;
-    justify-content: center;
-    gap: 26px;
-    z-index: 1000;
-    border-bottom: 1px solid #444;
-}
+    .bg-grid {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: -2;
+      opacity: 0.22;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+      background-size: 36px 36px;
+      mask-image: radial-gradient(circle at center, black 45%, transparent 95%);
+      -webkit-mask-image: radial-gradient(circle at center, black 45%, transparent 95%);
+    }
 
-.navbar a {
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 15px;
-    font-weight: 500;
-    transition: color 0.2s ease;
-}
+    .glow-orb {
+      position: fixed;
+      width: 380px;
+      height: 380px;
+      border-radius: 50%;
+      filter: blur(90px);
+      z-index: -3;
+      opacity: 0.22;
+      pointer-events: none;
+      animation: floatOrb 12s ease-in-out infinite alternate;
+    }
 
-.navbar a:hover {
-    color: #4da3ff;
-}
+    .glow-orb.one {
+      background: var(--accent);
+      top: 80px;
+      left: -60px;
+    }
 
-/* Smooth scrolling */
-html {
-    scroll-behavior: smooth;
-}
+    .glow-orb.two {
+      background: var(--accent-2);
+      top: 480px;
+      right: -80px;
+      animation-duration: 15s;
+    }
 
-/* Mobile responsive navbar */
-@media (max-width: 768px) {
+    @keyframes floatOrb {
+      from { transform: translateY(0px) translateX(0px); }
+      to { transform: translateY(40px) translateX(20px); }
+    }
+
+    .container {
+      width: min(var(--maxw), calc(100% - 32px));
+      margin: 0 auto;
+    }
+
     .navbar {
-        flex-wrap: wrap;
-        gap: 18px;
-        padding: 10px 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      background: rgba(8, 14, 28, 0.75);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
     }
-}
-    </style>
+
+    .nav-inner {
+      width: min(var(--maxw), calc(100% - 32px));
+      margin: 0 auto;
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      font-weight: 800;
+      font-size: 1rem;
+      letter-spacing: 0.3px;
+      color: #ffffff;
+    }
+
+    .brand span {
+      color: var(--accent);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 22px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: 0.25s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 46px;
+      padding: 0 18px;
+      border-radius: 12px;
+      border: 1px solid transparent;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: transform 0.22s ease, box-shadow 0.22s ease, background 0.22s ease, border-color 0.22s ease;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: white;
+      box-shadow: 0 10px 28px rgba(77, 163, 255, 0.28);
+    }
+
+    .btn-secondary {
+      background: rgba(255,255,255,0.03);
+      color: var(--text);
+      border-color: rgba(255,255,255,0.12);
+    }
+
+    .btn-secondary:hover {
+      border-color: rgba(77, 163, 255, 0.45);
+      box-shadow: 0 8px 24px rgba(77, 163, 255, 0.14);
+    }
+
+    .hero {
+      padding: 72px 0 50px;
+    }
+
+    .hero-wrap {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .hero-card,
+    .glass-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-card {
+      padding: 34px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      inset: -1px;
+      border-radius: inherit;
+      padding: 1px;
+      background: linear-gradient(135deg, rgba(77,163,255,0.35), rgba(0,212,255,0.15), rgba(255,255,255,0.04));
+      -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+      -webkit-mask-composite: xor;
+              mask-composite: exclude;
+      pointer-events: none;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 18px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(77, 163, 255, 0.1);
+      color: #cbe4ff;
+      border: 1px solid rgba(77,163,255,0.18);
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.3rem, 5vw, 4.6rem);
+      line-height: 1.05;
+      margin-bottom: 14px;
+      letter-spacing: -0.03em;
+    }
+
+    .hero .subtitle {
+      font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+      color: #d5e6ff;
+      font-weight: 600;
+      margin-bottom: 18px;
+      max-width: 720px;
+    }
+
+    .hero .summary {
+      color: var(--muted);
+      max-width: 760px;
+      font-size: 1rem;
+      margin-bottom: 26px;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      margin-bottom: 26px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .hero-meta span {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 14px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 12px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 28px;
+    }
+
+    .focus-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .focus-tags span {
+      padding: 9px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.04);
+      color: #d4e2f5;
+      border: 1px solid rgba(255,255,255,0.07);
+      font-size: 0.9rem;
+    }
+
+    .hero-side {
+      padding: 24px;
+    }
+
+    .profile-card {
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .profile-ring {
+      width: 190px;
+      height: 190px;
+      margin: 12px auto 18px;
+      padding: 6px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      box-shadow: 0 0 40px rgba(77,163,255,0.18);
+    }
+
+    .profile-ring img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 4px solid #0f172d;
+      background: #0f172d;
+    }
+
+    .profile-card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 6px;
+    }
+
+    .profile-card p {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 16px;
+    }
+
+    .mini-stats {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .mini-stat {
+      padding: 16px;
+      border-radius: 14px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.07);
+    }
+
+    .mini-stat strong {
+      display: block;
+      font-size: 1.2rem;
+      color: white;
+      margin-bottom: 4px;
+    }
+
+    .mini-stat span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.86rem;
+    }
+
+    section {
+      padding: 28px 0;
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 18px;
+      margin-bottom: 26px;
+    }
+
+    .section-header .left h2 {
+      font-size: clamp(1.7rem, 3vw, 2.4rem);
+      margin-bottom: 8px;
+      letter-spacing: -0.03em;
+    }
+
+    .section-header .left p {
+      color: var(--muted);
+      max-width: 760px;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .stat-card {
+      padding: 24px;
+      border-radius: 18px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.025));
+      border: 1px solid rgba(255,255,255,0.08);
+      box-shadow: var(--shadow);
+      transition: transform 0.22s ease, border-color 0.22s ease;
+    }
+
+    .stat-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(77,163,255,0.35);
+    }
+
+    .stat-card .value {
+      font-size: 2rem;
+      font-weight: 800;
+      margin-bottom: 6px;
+      color: white;
+    }
+
+    .stat-card .label {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 22px;
+      align-items: stretch;
+    }
+
+    .info-card {
+      padding: 28px;
+      border-radius: 20px;
+      background: var(--panel);
+      border: 1px solid rgba(255,255,255,0.08);
+      box-shadow: var(--shadow);
+    }
+
+    .info-card p {
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+
+    .focus-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .focus-box {
+      padding: 16px;
+      border-radius: 16px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .focus-box strong {
+      display: block;
+      margin-bottom: 6px;
+      color: white;
+    }
+
+    .focus-box span {
+      color: var(--muted);
+      font-size: 0.93rem;
+    }
+
+    .projects-grid {
+      display: grid;
+      gap: 22px;
+    }
+
+    .project-card {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 22px;
+      padding: 22px;
+      border-radius: 22px;
+      background: var(--panel);
+      border: 1px solid rgba(255,255,255,0.08);
+      box-shadow: var(--shadow);
+      transition: transform 0.24s ease, border-color 0.24s ease, box-shadow 0.24s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(77,163,255,0.34);
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.52);
+    }
+
+    .project-media {
+      position: relative;
+      border-radius: 18px;
+      overflow: hidden;
+      min-height: 280px;
+      background: #0c1428;
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .project-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.45s ease;
+    }
+
+    .project-card:hover .project-media img {
+      transform: scale(1.04);
+    }
+
+    .project-content h3 {
+      font-size: 1.55rem;
+      margin-bottom: 10px;
+      letter-spacing: -0.02em;
+    }
+
+    .project-impact {
+      font-size: 1rem;
+      color: #d8e9ff;
+      font-weight: 600;
+      margin-bottom: 14px;
+    }
+
+    .project-content p {
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+
+    .highlights {
+      display: grid;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+
+    .highlight {
+      padding: 12px 14px;
+      border-radius: 14px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
+      color: #dfeeff;
+      font-size: 0.94rem;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 16px 0 18px;
+    }
+
+    .tag {
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(77,163,255,0.1);
+      border: 1px solid rgba(77,163,255,0.18);
+      color: #d6ebff;
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+
+    .project-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .timeline {
+      position: relative;
+      margin-top: 10px;
+      padding-left: 26px;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 7px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(180deg, var(--accent), rgba(255,255,255,0.05));
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 24px;
+      padding: 22px;
+      border-radius: 18px;
+      background: var(--panel);
+      border: 1px solid rgba(255,255,255,0.08);
+      box-shadow: var(--shadow);
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -25px;
+      top: 26px;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      box-shadow: 0 0 0 6px rgba(77,163,255,0.1);
+    }
+
+    .timeline-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 10px;
+    }
+
+    .timeline-top h3 {
+      font-size: 1.15rem;
+    }
+
+    .timeline-top .date {
+      color: var(--accent-2);
+      font-weight: 600;
+      font-size: 0.92rem;
+    }
+
+    .timeline-item p.role-meta {
+      color: #dce8fb;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .timeline-item ul {
+      padding-left: 18px;
+      color: var(--muted);
+    }
+
+    .timeline-item li + li {
+      margin-top: 8px;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .skill-card {
+      padding: 24px;
+      border-radius: 18px;
+      background: var(--panel);
+      border: 1px solid rgba(255,255,255,0.08);
+      box-shadow: var(--shadow);
+    }
+
+    .skill-card h3 {
+      margin-bottom: 14px;
+      font-size: 1.08rem;
+    }
+
+    .pill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      list-style: none;
+    }
+
+    .pill-list li {
+      padding: 9px 12px;
+      border-radius: 999px;
+      font-size: 0.88rem;
+      color: #dce9ff;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.07);
+    }
+
+    .edu-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .edu-card {
+      padding: 24px;
+      border-radius: 20px;
+      background: var(--panel);
+      border: 1px solid rgba(255,255,255,0.08);
+      box-shadow: var(--shadow);
+    }
+
+    .edu-card h3 {
+      margin-bottom: 8px;
+      font-size: 1.14rem;
+    }
+
+    .edu-card .school {
+      color: #d8e7ff;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .edu-card .date {
+      color: var(--accent-2);
+      font-weight: 600;
+      font-size: 0.92rem;
+      margin-bottom: 14px;
+      display: block;
+    }
+
+    .edu-card p,
+    .edu-card li {
+      color: var(--muted);
+    }
+
+    .edu-card ul {
+      padding-left: 18px;
+      margin-top: 8px;
+    }
+
+    .contact-card {
+      padding: 34px;
+      border-radius: 24px;
+      background:
+        linear-gradient(135deg, rgba(77,163,255,0.12), rgba(0,212,255,0.06)),
+        var(--panel);
+      border: 1px solid rgba(255,255,255,0.08);
+      box-shadow: var(--shadow);
+      text-align: center;
+    }
+
+    .contact-card h2 {
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      margin-bottom: 12px;
+    }
+
+    .contact-card p {
+      color: var(--muted);
+      max-width: 760px;
+      margin: 0 auto 22px;
+    }
+
+    .contact-actions {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 20px;
+    }
+
+    footer {
+      padding: 34px 0 44px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(26px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 1080px) {
+      .hero-wrap,
+      .about-grid,
+      .project-card,
+      .edu-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .stats-grid,
+      .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .project-media {
+        min-height: 260px;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .nav-inner {
+        min-height: auto;
+        padding: 14px 0;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        gap: 14px;
+      }
+
+      .hero {
+        padding-top: 42px;
+      }
+
+      .hero-card,
+      .info-card,
+      .skill-card,
+      .edu-card,
+      .timeline-item,
+      .contact-card,
+      .project-card {
+        padding: 18px;
+      }
+
+      .stats-grid,
+      .skills-grid,
+      .focus-grid,
+      .mini-stats {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-actions,
+      .project-actions,
+      .contact-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .section-header {
+        align-items: flex-start;
+      }
+
+      .project-content h3 {
+        font-size: 1.32rem;
+      }
+
+      .hero h1 {
+        font-size: 2.35rem;
+      }
+    }
+  </style>
 </head>
-
 <body>
-<!-- Navigation Bar -->
-<nav class="navbar">
-    <a href="#about">About</a>
-    <a href="#projects">Projects</a>
-    <a href="#experience">Experience</a>
-    <a href="#education">Education</a>
-    <a href="#contact">Contact</a>
-</nav>
-<div class="header">
-    <img src="1671945576598.jpg" alt="Profile Photo" class="profile-pic">
+  <div class="bg-grid"></div>
+  <div class="glow-orb one"></div>
+  <div class="glow-orb two"></div>
 
-    <div class="header-text">
-        <h1>Muhammad Huzefa Farooq</h1>
-        <p>Controls | Automation | Instrumentation | Mechatronics | Embedded Systems</p>
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a href="#home" class="brand">Muhammad <span>Huzefa</span> Farooq</a>
 
-        <p style="margin-top: 10px; font-size: 15px; line-height: 1.6;">
-    <span style="margin-right: 10px;">📍</span> Ontario, Canada <br>
-            
-    <span style="margin-right: 10px;">📧</span>
-    <a href="mailto:huzefa.farooq999@gmail.com" style="color: #4da3ff;">huzefa.farooq999@gmail.com</a><br>
- <div class="top-buttons">
-    <a class="btn-top" href="Muhammad_Huzefa_Farooq_Resume.pdf" target="_blank">Resume</a>
-    <a class="btn-top" href="https://www.linkedin.com/in/muhammad-huzefa-farooq-3354341b1" target="_blank">LinkedIn</a>
-</div>
-</p>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+      </div>
 
+      <div class="nav-cta">
+        <a class="btn btn-secondary" href="Muhammad_Huzefa_Farooq_Resume.pdf" target="_blank">Resume</a>
+      </div>
     </div>
-</div>
-
-<div class="section" id="about">
-    <h2>Professional Summary</h2>
-    <p>
-       Controls and Automation Engineer specializing in embedded sensing, power electronics modeling, and BAS/HVAC control logic. I design practical engineering solutions by integrating embedded systems, data acquisition, and system-level modeling using MATLAB/Simulink and modern sensor technologies.
-    </p>
-</div>
-
-<div class="section" id="projects">
-    <h2>Force Sensing Surgical Instrument for Robotic Surgery</h2>
-   
-   
-
-
-    <!-- Tools Used -->
-    <h3>Tools Used</h3>
-    <ul>
-        <li>COMSOL</li>
-        <li>Arduino</li>
-        <li>Proteus</li>
-        <li>EasyEDA</li>
-        <li>SolidWorks</li>
-        <li>Ansys</li>
-    </ul>
-
-    <!-- Skills Used -->
-    <h3>Skills Used</h3>
-    <ul>
-        <li>PCB Development</li>
-        <li>Sensor Designing</li>
-        <li>CAD Modeling</li>
-        <li>ESP32 Programming</li>
-        <li>Calibration</li>
-        <li>DAQ Systems</li>
-        <li>Wireless Feedback</li>
-        <li>Signal Processing</li>
-    </ul>
-
-    <!-- S.T.A.R Format Content -->
-
-    <h3>Situation</h3>
-    <p>
-        Laparoscopic and robotic minimally invasive surgery is performed through small incisions using
-        long, slender instruments. Although this reduces patient trauma, surgeons lose natural haptic
-        feedback because these instruments isolate their hands from the tissue. This creates challenges
-        in sensing applied forces and assessing tissue stiffness, increasing the risk of accidental tissue damage.
-    </p>
-
-    <h3>Task</h3>
-    <p>
-        The objective was to design a smart laparoscopic tool that provides real-time haptic feedback to
-        surgeons. This required developing an integrated sensing system capable of measuring both normal
-        and shear forces using a flexible capacitive sensor, and estimating tissue stiffness using a
-        position/angle sensor. The task also included creating a compact data acquisition board, wireless
-        feedback mechanism (wearable band), and mechanical integration into a functional surgical grasper.
-    </p>
-<img src="P1_FlowDiagram.jpg" 
-     style="width:75%; display:block; margin:20px auto; border-radius:5px;">
-
-
-
-
-    <h3>Action</h3>
-    <p>
-        Designed and fabricated a flexible capacitive force sensor and integrated it into a laparoscopic grasper.
-        Developed the complete DAQ system using ESP32, AD7746, ADS1115, and AS5600 sensors. Built calibration
-        setups, mapped capacitance to force, and performed simulations for normal and shear measurement.
-        Redesigned the tool mechanism for safe sensor placement and implemented wireless haptic feedback
-        using a wearable band and custom motor driver circuitry.
-    </p>
-<img src="P1_CalibrationSetup.jpg" 
-     style="width:100%; display:block; margin:20px auto; border-radius:5px;">
-    <h3>Result</h3>
-    <p>
-        Achieved accurate measurement of force and stiffness with errors less than eight percent. Delivered a
-        complete working prototype with real-time wireless sensing and haptic feedback. The project was
-        selected for national innovation competitions including FICS and Ignite.
-    </p>
-   <img src="P1_NormalShearForce.jpg" 
-     style="width:100%; display:block; margin:20px auto; border-radius:5px;">
-</div>
-
-    
-    <!-- Project 2 -->
-    <div class="section">
-     <h2>Autonomous Fruit Plucking Robot - NERC Robotics Competition</h2>
-    (Team Lead)
-   
-   
-
-
-    <!-- Tools Used -->
-    <h3>Tools Used</h3>
-    <ul>
-        <li>SolidWorks</li>
-        <li>Arduino</li>
-        <li>Proteus</li>
-        <li>Ansys</li>
-    </ul>
-
-    <!-- Skills Used -->
-    <h3>Skills Used</h3>
-    <ul>
-        <li>PCB Development</li>
-        <li>Sensor Integration</li>
-        <li>CAD Modeling</li>
-        <li>Arduino Programming</li>
-        <li>Signal Processing</li>
-    </ul>
-
-    <!-- S.T.A.R Format Content -->
-
-    <h3>Situation</h3>
-    <p>
-        The NERC Indigenous Robotics Category required a fully autonomous mobile robot to navigate a themed arena,
-        locate fruit trees, pluck ping-pong ball “fruits,” and collect them in a specified sequence. The rules enforced strict size limits and prohibited prefabricated driver modules, demanding an
-        indigenous mechanical design, custom electronics, and reliable autonomous navigation.
-    </p>
-<img src="P2_ArenaTheme.PNG" 
-     style="width:75%; display:block; margin:20px auto; border-radius:5px;">
-
-    <h3>Task</h3>
-    <p>
-       As team lead, my task was to design, build, and program an autonomous fruit-harvesting robot from scratch.
-        This included creating a mechanical plucking system, developing custom motor driver circuitry, implementing
-        sensor-based navigation and line following, and coordinating the full integration so the robot could
-        consistently pluck fruits from different trees and deliver them to the collection area within the time limit.
-    </p>
-
-
-
-    <h3>Action</h3>
-    <p>
-       I led the design and implementation of the control system for an autonomous fruit-plucking robot, focusing on actuator control, sensor integration, and sequence automation. I developed control logic in Arduino C to acquire and process multiple IR sensor inputs, enabling position detection, line tracking, and event-based actuation. I designed and implemented an H-bridge motor driver for DC motors and integrated servo control for coordinated arm and container motion. Motion sequences were tuned through iterative testing by adjusting timing, speed profiles, and sensor thresholds to ensure stable, repeatable operation under dynamic field conditions.
-    </p>
-
-    <h3>Result</h3>
-    <p>
-        The robot successfully navigated the arena, plucked fruits from the required trees, and transferred them to
-        the collector robot with high repeatability during trials. Our team’s robot met the competition constraints
-        and performed reliably under time pressure, earning a first runner-up position at NERC and demonstrating our
-        ability to deliver a complete autonomous mechatronic system.
-    </p>
-   <img src="P2_group.jpg" 
-     style="width:75%; display:block; margin:20px auto; border-radius:5px;">
-</div>
-
-
-       <!-- Project 3 -->
-    <div class="section">
-     <h2> Single Active Bridge (SAB) VS Dual Active Bridge (DAB) Analysis 
-   
-   
-
-
-    <!-- Tools Used -->
-    <h3>Tools Used</h3>
-    <ul>
-        <li>MATLAB Simulink</li>
-    </ul>
-
-    <!-- Skills Used -->
-    <h3>Skills Used</h3>
-    <ul>
-        <li>DC-DC Converter Design</li>
-        <li>Phase-shift control implementation</li>
-        <li>CCM/DCM operation analysis</li>
-        <li>Power electronics modelling</li>
-    </ul>
-
-    <!-- S.T.A.R Format Content -->
-
-    <h3>Situation</h3>
-    <p>
-        Isolated DC–DC converters are essential in EV chargers and energy-storage systems. Two topologies, Single Active Bridge (SAB) and Dual Active Bridge (DAB), offer different trade-offs in complexity, soft-switching behavior, and bidirectional power flow. A comparative study was needed to understand which is better for high-power applications.
-    </p>
-<img src="P3_SABModel.PNG" 
-     style="width:75%; display:block; margin:20px auto; border-radius:5px;">
-
-    <h3>Task</h3>
-    <p>
-      Model and simulate both converters in MATLAB/Simulink, evaluate their performance under varying load conditions, and compare efficiency, current stress, and soft-switching capability to guide topology selection.
-    </p>
-
-    <h3>Action</h3>
-    <p>
-       Built detailed SAB and DAB converter models with phase-shift control, simulated their operation in CCM and DCM, analyzed switching waveforms, transformer utilization, and power transfer characteristics, and documented performance differences through controlled test cases.
-    </p>
-
-    <h3>Result</h3>
-    <p>
-       Showed that SAB is simpler and cost-effective but limited in soft-switching range, while DAB provides higher efficiency and full bidirectional power flow, making it better suited for EV and energy-storage systems. Delivered validated comparison models and clear design insights.
-    </p>
-   <img src="P3_Result.PNG" 
-     style="width:75%; display:block; margin:20px auto; border-radius:5px;">
-</div>
-
-<!-- Project: Battery Fuel Gauge Modeling -->
-<div class="section">
-    <h2>Battery Fuel Gauge Modeling in MATLAB</h2>
-
-    <!-- Tools Used -->
-    <h3>Tools Used</h3>
-    <ul>
-        <li>MATLAB</li>
-    </ul>
-
-    <!-- Skills Used -->
-    <h3>Skills Used</h3>
-    <ul>
-        <li>Battery modelling</li>
-        <li>Numerical integration</li>
-        <li>SOC estimation algorithms</li>
-        <li>Internal resistance estimation</li>
-        <li>Data processing and interpolation</li>
-        <li>Signal analysis and plotting</li>
-        <li>Battery management system concepts</li>
-    </ul>
-
-    <!-- S.T.A.R Format Content -->
-
-    <h3>Situation</h3>
-    <p>
-        Modern battery powered systems rely on accurate estimation of internal battery states for safe and reliable
-        operation. States such as state of charge, internal resistance, and remaining runtime cannot be measured
-        directly and must be inferred from voltage and current data through a software based battery fuel gauge.
-    </p>
-
-   
-
-    <h3>Task</h3>
-    <p>
-        The task was to implement a complete battery fuel gauge model in MATLAB using experimental voltage, current,
-        and time data. This included estimating battery capacity, generating a pseudo OCV curve, creating a
-        voltage based SOC lookup, estimating internal resistance, computing SOC through Coulomb counting, and
-        predicting time to shutdown under a given load profile.
-    </p>
-
-    <h3>Action</h3>
-    <p>
-        Implemented numerical integration of current to estimate charge and discharge capacity. Constructed an
-        averaged pseudo OCV curve by combining charging and discharging characteristics and used it to build a
-        voltage based SOC lookup. Estimated internal resistance from voltage steps during current pulses and
-        implemented Coulomb counting for SOC tracking with clipping for stability. Finally, combined SOC,
-        internal resistance, and cutoff voltage to estimate remaining time to shutdown, and visualized all
-        intermediate and final results using MATLAB plots.
-    </p>
-
-    <img src="P4_Result.PNG"
-         alt="OCV Curve"
-         style="width:75%; display:block; margin:20px auto; border-radius:5px;">
-    <h3>Result</h3>
-    <p>
-        Delivered a working MATLAB based battery fuel gauge capable of estimating capacity, SOC, internal resistance,
-        and remaining runtime from only voltage and current measurements. The model reproduced expected battery
-        behaviour across the data set and demonstrated how software algorithms inside a battery management system
-        can infer hidden battery states from measurable signals.
-    </p>
-
-    <!-- Link to full report -->
-    <p>
-        📄 <a href="EV_Battery_Modeling_Report.pdf" target="_blank" style="color:#4da3ff;">
-        View Full Project Report
-        </a>
-    </p>
-</div>
-
-<div class="section" id="experience">
-    <h2>Experience</h2>
-
-    <!-- Front Store Supervisor -->
-    <h3>Front Store Supervisor (Part-Time) — Shoppers Drug Mart, Windsor</h3>
-    <p><em>July 2024 – Present</em></p>
-    <ul>
-        <li>Oversee daily front store operations in a high-traffic retail environment, coordinating cashiers, floor staff, and customer service to keep queues moving smoothly.</li>
-        <li>Handle cash management tasks including end-of-day reconciliation, resolving till discrepancies, and preparing reports for the management team.</li>
-        <li>Support the in-store post office counter, processing parcels, bill payments, and other postal services while maintaining accuracy and compliance with procedures.</li>
-        <li>Train and mentor new team members on point-of-sale systems, customer interaction, and store standards, helping them become productive quickly.</li>
-        <li>Resolve customer issues calmly and professionally, balancing store policies with practical solutions to maintain a positive customer experience.</li>
-        <li>Prioritize and delegate tasks such as facing, restocking, and promotional setups to keep the store organized and ready for peak hours.</li>
-    </ul>
-
-<!-- Controls Engineer -->
-<h3>Controls Engineer — Blue Sky Automation, Lahore</h3>
-<p><em>September 2023 – March 2024</em></p>
-<ul>
-    <li>Worked on HVAC and Building Automation System (BAS) projects using Niagara N4, focusing on AHUs, VAVs, chillers, and zone-level temperature control sequences.</li>
-    <li>Designed and modified control logic, schedules, alarms, trends, and operator interfaces within Niagara N4 for remote BAS deployments.</li>
-    <li>Developed graphics dashboards and equipment views to visualize HVAC system performance, device status, and sensor readings.</li>
-    <li>Integrated BACnet and Modbus devices in software by adding points, configuring network parameters, and validating device communication through station testing.</li>
-    <li>Assisted senior engineers with remote system checks, functional testing, and verifying logic execution through simulation and N4 live values.</li>
-    <li>Troubleshot software-side issues including communication dropouts, incorrect point mapping, logic conflicts, and device configuration mismatches.</li>
-    <li>Prepared documentation including device lists, point lists, mapping sheets, and update logs to support handover and long-term maintenance.</li>
-</ul>
-
-
- <!-- Undergraduate Research Student -->
-<h3>Undergraduate Research Student — NUST, Pakistan</h3>
-<p><em>2022 – 2023</em></p>
-<ul>
-    <li>Worked in the Micro and Nano Robotics laboratory on a research project focused on developing flexible capacitive force and tactile sensing systems for minimally invasive and robotic surgery.</li>
-    <li>The project was part of an internationally funded PAK-UK Innovative & Collaborative Research Grant (ICRG), titled 
-        <strong>“Development of Nanomaterials-Based Tactile Sensors for Tele-Manipulation in Robotic Surgery.”</strong></li>
-    <li>Assisted in designing multi-layer flexible sensor structures and evaluating different material stacks and geometries to sense both normal and shear components of force.</li>
-    <li>Helped develop the data acquisition pipeline using microcontrollers and sensor-interface ICs (AD7746, ADS1115, AS5600), contributing to PCB design, prototyping, and initial testing.</li>
-    <li>Conducted calibration experiments using controlled loads and a precision force gauge, processed large datasets, and generated calibration curves, error estimates, and response plots.</li>
-    <li>Supported mechanical integration of the sensor into prototype laparoscopic tools by working with CAD models to ensure proper placement, alignment, and load transfer for accurate sensing.</li>
-    <li>Analyzed raw capacitance and force data, implemented filtering and interpolation methods, and validated sensor behavior across normal and shear loading conditions.</li>
-    <li>Contributed to technical reports and presentations summarizing experimental methodology, simulation results, and potential applications in robotic-assisted surgery and haptic feedback systems.</li>
-</ul>
-
-    <!-- Maintenance Intern -->
-    <h3>Maintenance Intern — Atlas Honda, Sheikhupura</h3>
-    <p><em>September 2021 – October 2021</em></p>
-    <ul>
-        <li>Observed and learned production processes across multiple areas of the plant including casting, engine machining and assembly, paint shop, heat treatment, fuel tank welding, and frame assembly.</li>
-        <li>Shadowed the maintenance team on routine inspections and breakdown maintenance of conveyor systems, cooling lines, and other critical equipment.</li>
-        <li>Worked on the concept and basic design of a cooling conveyor control system using PLC, HMI, temperature sensors, and variable frequency drives to stabilize product cooling.</li>
-        <li>Reviewed existing control panel layouts, wiring practices, and safety interlocks, gaining familiarity with industrial standards and shop-floor practices.</li>
-        <li>Assisted with simple troubleshooting tasks under supervision, such as checking sensor placement, verifying signal status, and observing VFD parameter adjustments.</li>
-        <li>Documented observations and prepared a brief summary report capturing process flow, bottlenecks, and potential areas where automation or control improvements could help.</li>
-    </ul>
-
-</div>
-
-
-<div class="section" id="education">
-    <h2>Education</h2>
-
-    <!-- Master's Degree -->
-    <h3>Master of Engineering (M.Eng.) — Electrical & Computer Engineering</h3>
-    <p><em>University of Windsor, Canada — 2023 to 2025</em></p>
-    <ul>
-        <li>Focused on power electronics, energy storage systems, automotive sensors, and computational engineering.</li>
-        <li>Completed technical projects involving MATLAB/Simulink modeling, battery fuel gauge estimation, DC–DC converter simulations, and system-level engineering analysis.</li>
-        <li>Consistently earned high academic standing with a <strong>cumulative GPA of 91.25%</strong> and received <strong>Honour Roll Distinction</strong>.</li>
-        <li>Developed strong analytical and modeling skills applicable to automation, energy systems, embedded control, and advanced engineering design.</li>
-    </ul>
-
-    <h4>Graduate Courses</h4>
-    <ul class="pill-list">
-        <li>Engineering Technical Communications</li>
-        <li>Engineering Mathematics</li>
-        <li>Engineering Project Management</li>
-        <li>Computational Methods & Modeling for Engineering</li>
-        <li>Advanced Energy Storage Systems</li>
-        <li>EV Power Conversion</li>
-        <li>Automotive Sensor Systems</li>
-        <li>Power Systems II</li>
-    </ul>
-
-    <br>
-
-    <!-- Bachelor's Degree -->
-    <h3>Bachelor of Engineering (B.E.) — Mechatronics Engineering</h3>
-    <p><em>National University of Sciences and Technology (NUST), Pakistan — 2018 to 2022</em></p>
-    <ul>
-        <li>Developed a strong foundation in robotics, control systems, embedded electronics, sensors, automation, and mechanical system design.</li>
-        <li>Conducted undergraduate research as part of a prestigious <strong>PAK-UK ICRG-funded international project</strong> on nanomaterial-based tactile sensors for tele-manipulation in robotic surgery.</li>
-        <li>Completed major engineering projects including an autonomous fruit-plucking robot (NERC) and advanced power electronics simulations.</li>
-        <li>Gained hands-on experience with embedded systems, control logic, mechanical design, and sensor integration.</li>
-    </ul>
-
-    <h4>Relevant Undergraduate Courses</h4>
-    <ul class="pill-list">
-        <!-- Core Electrical & Electronics -->
-        <li>Electric Circuits Analysis</li>
-        <li>Electronic Devices & Circuits</li>
-        <li>Electronic Circuit Design</li>
-        <li>Digital Logic Design</li>
-        <li>Signals & Systems</li>
-        <li>Digital Signal Processing</li>
-
-        <!-- Controls, Automation & Robotics -->
-        <li>Linear Control Systems</li>
-        <li>Mechatronics System Design</li>
-        <li>Manufacturing Automation</li>
-        <li>Introduction to Robotics</li>
-        <li>Actuating Systems</li>
-        <li>Instrumentation & Measurements</li>
-
-        <!-- Embedded & Programming -->
-        <li>Microcontrollers & Embedded Systems</li>
-        <li>Modeling & Simulation</li>
-        <li>Data Structures & OOP</li>
-
-        <!-- Mechanical Engineering -->
-        <li>Mechanics of Materials</li>
-        <li>Engineering Dynamics</li>
-        <li>Mechanical Vibrations</li>
-        <li>Theory of Machines</li>
-        <li>Design of Machine Elements</li>
-        <li>Thermodynamics</li>
-        <li>Materials & Manufacturing Processes</li>
-
-        <!-- Mathematics & Computational -->
-        <li>Calculus & Analytical Geometry</li>
-        <li>Linear Algebra & ODEs</li>
-        <li>Vector Calculus</li>
-        <li>Complex Variables & Transforms</li>
-        <li>Numerical Methods</li>
-        <li>Probability & Statistics</li>
-
-        <!-- Professional Development -->
-        <li>Engineering Project Management</li>
-        <li>Technical & Business Writing</li>
-        <li>Professional Ethics</li>
-    </ul>
-
-</div>
-
-
-</div>
-
-<div class="section" id="contact">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:huzefa.farooq999@gmail.com">huzefa.farooq999@gmail.com</a></p>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/muhammad-huzefa-farooq-3354341b1" target="_blank">Visit Profile</a></p>
-</div>
-
-
+  </nav>
+
+  <main id="home">
+    <section class="hero">
+      <div class="container hero-wrap">
+        <div class="hero-card reveal">
+          <div class="eyebrow">⚙️ Controls • Automation • Embedded Systems</div>
+
+          <h1>Muhammad Huzefa Farooq</h1>
+
+          <p class="subtitle">
+            Controls, Automation & Embedded Systems Engineer building intelligent engineering solutions across robotics, sensing, BAS/HVAC, and power electronics.
+          </p>
+
+          <p class="summary">
+            I design practical systems by combining embedded electronics, control logic, data acquisition, simulation, and system-level engineering. My work spans robotic sensing, autonomous machines, building automation, battery modeling, and power conversion analysis.
+          </p>
+
+          <div class="hero-meta">
+            <span>📍 Ontario, Canada</span>
+            <span>📧 huzefa.farooq999@gmail.com</span>
+            <span>🔗 Open to engineering opportunities</span>
+          </div>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#projects">View Featured Projects</a>
+            <a class="btn btn-secondary" href="Muhammad_Huzefa_Farooq_Resume.pdf" target="_blank">Download Resume</a>
+            <a class="btn btn-secondary" href="https://www.linkedin.com/in/muhammad-huzefa-farooq-3354341b1" target="_blank">LinkedIn</a>
+          </div>
+
+          <div class="focus-tags">
+            <span>Embedded Sensing</span>
+            <span>Controls & BAS</span>
+            <span>Robotics</span>
+            <span>Power Electronics</span>
+            <span>MATLAB/Simulink</span>
+            <span>DAQ Systems</span>
+          </div>
+        </div>
+
+        <aside class="glass-card hero-side profile-card reveal">
+          <div class="profile-ring">
+            <img src="1671945576598.jpg" alt="Muhammad Huzefa Farooq">
+          </div>
+
+          <h3>Engineering Across Hardware + Control + Modeling</h3>
+          <p>
+            Turning complex physical systems into reliable, measurable, and buildable solutions.
+          </p>
+
+          <div class="mini-stats">
+            <div class="mini-stat">
+              <strong>&lt;8%</strong>
+              <span>Force sensing error</span>
+            </div>
+            <div class="mini-stat">
+              <strong>1st Runner-Up</strong>
+              <span>NERC Robotics</span>
+            </div>
+            <div class="mini-stat">
+              <strong>91.25%</strong>
+              <span>Graduate GPA</span>
+            </div>
+            <div class="mini-stat">
+              <strong>4+</strong>
+              <span>Technical domains</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="container">
+      <div class="stats-grid">
+        <div class="stat-card reveal">
+          <div class="value">&lt;8%</div>
+          <div class="label">Measured force/stiffness error in surgical sensing prototype</div>
+        </div>
+        <div class="stat-card reveal">
+          <div class="value">1st Runner-Up</div>
+          <div class="label">Autonomous robot performance at NERC competition</div>
+        </div>
+        <div class="stat-card reveal">
+          <div class="value">91.25%</div>
+          <div class="label">M.Eng. cumulative GPA with Honour Roll Distinction</div>
+        </div>
+        <div class="stat-card reveal">
+          <div class="value">Research + Industry</div>
+          <div class="label">Experience across robotics, BAS/HVAC, embedded sensing, and modeling</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="left">
+            <h2>About Me</h2>
+            <p>
+              I enjoy building systems where hardware, sensing, controls, and simulation come together to solve real engineering problems.
+            </p>
+          </div>
+        </div>
+
+        <div class="about-grid">
+          <div class="info-card reveal">
+            <p>
+              I am an engineer with experience spanning controls, automation, robotics, embedded electronics, power systems, and intelligent sensing. My background combines hands-on prototyping with analytical engineering work, allowing me to move comfortably between physical hardware and system modeling.
+            </p>
+            <p>
+              From flexible force sensors for robotic surgery to autonomous robots, BAS/HVAC control logic, battery fuel gauge modeling, and converter simulations, I focus on designing solutions that are technically sound, practical to implement, and grounded in measurable performance.
+            </p>
+            <p>
+              My goal is to contribute to engineering teams working on control systems, automation, embedded platforms, smart sensing, energy systems, and advanced mechatronic products.
+            </p>
+          </div>
+
+          <div class="info-card reveal">
+            <h3 style="margin-bottom: 16px;">Engineering Focus</h3>
+
+            <div class="focus-grid">
+              <div class="focus-box">
+                <strong>Controls & BAS</strong>
+                <span>Niagara N4, HVAC logic, BACnet, Modbus, scheduling and alarms</span>
+              </div>
+              <div class="focus-box">
+                <strong>Embedded Systems</strong>
+                <span>ESP32, Arduino, DAQ systems, sensor interfacing, calibration workflows</span>
+              </div>
+              <div class="focus-box">
+                <strong>Robotics & Mechatronics</strong>
+                <span>Autonomous actuation, sensor-driven control, mechanical integration</span>
+              </div>
+              <div class="focus-box">
+                <strong>Modeling & Analysis</strong>
+                <span>MATLAB, Simulink, converter analysis, battery estimation, simulation</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="left">
+            <h2>Featured Projects</h2>
+            <p>
+              A selection of engineering work across smart sensing, autonomous robotics, power electronics, and battery system modeling.
+            </p>
+          </div>
+        </div>
+
+        <div class="projects-grid">
+          <article class="project-card reveal">
+            <div class="project-media">
+              <img src="P1_CalibrationSetup.jpg" alt="Force Sensing Surgical Instrument">
+            </div>
+            <div class="project-content">
+              <h3>Force Sensing Surgical Instrument for Robotic Surgery</h3>
+              <div class="project-impact">
+                Designed a smart laparoscopic tool with real-time force sensing, stiffness estimation, and wireless haptic feedback.
+              </div>
+              <p>
+                Developed an integrated sensing system for minimally invasive surgery using a flexible capacitive force sensor, compact DAQ electronics, and wearable haptic feedback. The project combined sensor design, PCB development, calibration, mechanical integration, and wireless embedded control.
+              </p>
+
+              <div class="highlights">
+                <div class="highlight">✔️ Measured normal and shear force with less than 8% error</div>
+                <div class="highlight">✔️ Built complete DAQ pipeline using ESP32, AD7746, ADS1115, and AS5600</div>
+                <div class="highlight">✔️ Selected for national innovation competitions including FICS and Ignite</div>
+              </div>
+
+              <div class="tags">
+                <span class="tag">COMSOL</span>
+                <span class="tag">ESP32</span>
+                <span class="tag">Arduino</span>
+                <span class="tag">PCB Design</span>
+                <span class="tag">Sensor Calibration</span>
+                <span class="tag">SolidWorks</span>
+                <span class="tag">Ansys</span>
+              </div>
+
+              <div class="project-actions">
+                <a class="btn btn-secondary" href="P1_FlowDiagram.jpg" target="_blank">View Diagram</a>
+                <a class="btn btn-secondary" href="P1_NormalShearForce.jpg" target="_blank">View Results</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-media">
+              <img src="P2_group.jpg" alt="Autonomous Fruit Plucking Robot">
+            </div>
+            <div class="project-content">
+              <h3>Autonomous Fruit Plucking Robot — NERC Robotics Competition</h3>
+              <div class="project-impact">
+                Led the development of a fully autonomous robot that navigated, detected targets, plucked fruits, and completed task sequences under competition constraints.
+              </div>
+              <p>
+                As team lead, I designed the control logic and system integration for an indigenous autonomous mobile robot. The project involved custom electronics, sensor-based navigation, actuator control, and iterative testing to achieve stable, repeatable field performance.
+              </p>
+
+              <div class="highlights">
+                <div class="highlight">✔️ Developed autonomous control logic using Arduino-based sensor processing</div>
+                <div class="highlight">✔️ Designed custom H-bridge motor driver and coordinated servo actuation</div>
+                <div class="highlight">✔️ Earned first runner-up position at NERC</div>
+              </div>
+
+              <div class="tags">
+                <span class="tag">Arduino</span>
+                <span class="tag">Autonomous Navigation</span>
+                <span class="tag">Sensor Integration</span>
+                <span class="tag">Motor Driver Design</span>
+                <span class="tag">SolidWorks</span>
+                <span class="tag">Proteus</span>
+              </div>
+
+              <div class="project-actions">
+                <a class="btn btn-secondary" href="P2_ArenaTheme.PNG" target="_blank">View Arena</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-media">
+              <img src="P3_Result.PNG" alt="SAB vs DAB Analysis">
+            </div>
+            <div class="project-content">
+              <h3>Single Active Bridge vs Dual Active Bridge Analysis</h3>
+              <div class="project-impact">
+                Modeled and compared isolated DC–DC converter topologies to evaluate efficiency, current stress, and soft-switching performance.
+              </div>
+              <p>
+                Built detailed MATLAB/Simulink models of SAB and DAB converters and studied their operation under varying load conditions. The work focused on phase-shift control, CCM/DCM behavior, waveform analysis, and topology trade-offs for EV and energy storage applications.
+              </p>
+
+              <div class="highlights">
+                <div class="highlight">✔️ Compared soft-switching range and bidirectional power flow capability</div>
+                <div class="highlight">✔️ Evaluated transformer utilization, power transfer, and current stress</div>
+                <div class="highlight">✔️ Produced validated models and clear design-selection insights</div>
+              </div>
+
+              <div class="tags">
+                <span class="tag">MATLAB</span>
+                <span class="tag">Simulink</span>
+                <span class="tag">Power Electronics</span>
+                <span class="tag">DC-DC Converters</span>
+                <span class="tag">Phase Shift Control</span>
+              </div>
+
+              <div class="project-actions">
+                <a class="btn btn-secondary" href="P3_SABModel.PNG" target="_blank">View Model</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-media">
+              <img src="P4_Result.PNG" alt="Battery Fuel Gauge Modeling">
+            </div>
+            <div class="project-content">
+              <h3>Battery Fuel Gauge Modeling in MATLAB</h3>
+              <div class="project-impact">
+                Implemented a full software-based fuel gauge to estimate state of charge, internal resistance, and remaining runtime.
+              </div>
+              <p>
+                Built a MATLAB model using voltage, current, and time data to estimate battery states that are not directly measurable. The solution integrated numerical current integration, pseudo-OCV construction, SOC lookup generation, resistance estimation, Coulomb counting, and shutdown-time prediction.
+              </p>
+
+              <div class="highlights">
+                <div class="highlight">✔️ Estimated capacity, SOC, internal resistance, and time to shutdown</div>
+                <div class="highlight">✔️ Combined data processing, interpolation, and algorithmic estimation</div>
+                <div class="highlight">✔️ Demonstrated practical battery management system concepts through software modeling</div>
+              </div>
+
+              <div class="tags">
+                <span class="tag">MATLAB</span>
+                <span class="tag">Battery Modeling</span>
+                <span class="tag">SOC Estimation</span>
+                <span class="tag">Signal Analysis</span>
+                <span class="tag">BMS Concepts</span>
+              </div>
+
+              <div class="project-actions">
+                <a class="btn btn-secondary" href="EV_Battery_Modeling_Report.pdf" target="_blank">View Full Report</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="left">
+            <h2>Experience</h2>
+            <p>
+              Experience across research, automation engineering, and operational leadership in high-responsibility environments.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline">
+          <div class="timeline-item reveal">
+            <div class="timeline-top">
+              <h3>Front Store Supervisor — Shoppers Drug Mart, Windsor</h3>
+              <span class="date">July 2024 – Present</span>
+            </div>
+            <p class="role-meta">Part-Time</p>
+            <ul>
+              <li>Oversee front store operations, support customer service flow, and coordinate staff in a high-traffic retail environment.</li>
+              <li>Handle cash reconciliation, till accuracy, reporting, and operational issue resolution.</li>
+              <li>Train team members on systems, service standards, and day-to-day workflow execution.</li>
+            </ul>
+          </div>
+
+          <div class="timeline-item reveal">
+            <div class="timeline-top">
+              <h3>Controls Engineer — Blue Sky Automation, Lahore</h3>
+              <span class="date">September 2023 – March 2024</span>
+            </div>
+            <p class="role-meta">HVAC / BAS / Niagara N4</p>
+            <ul>
+              <li>Worked on BAS/HVAC projects using Niagara N4 for AHUs, VAVs, chillers, and zone-level control sequences.</li>
+              <li>Designed and modified schedules, alarms, trends, graphics, and control logic for remote building automation deployments.</li>
+              <li>Integrated BACnet and Modbus devices, validated communications, and supported software-side troubleshooting and documentation.</li>
+            </ul>
+          </div>
+
+          <div class="timeline-item reveal">
+            <div class="timeline-top">
+              <h3>Undergraduate Research Student — NUST, Pakistan</h3>
+              <span class="date">2022 – 2023</span>
+            </div>
+            <p class="role-meta">Micro & Nano Robotics Laboratory</p>
+            <ul>
+              <li>Contributed to a PAK-UK internationally funded research project on nanomaterial-based tactile sensing for robotic surgery.</li>
+              <li>Supported flexible capacitive sensor design, DAQ development, calibration experiments, signal analysis, and prototype integration.</li>
+              <li>Helped validate force sensing performance across normal and shear loading conditions through experiments and data analysis.</li>
+            </ul>
+          </div>
+
+          <div class="timeline-item reveal">
+            <div class="timeline-top">
+              <h3>Maintenance Intern — Atlas Honda, Sheikhupura</h3>
+              <span class="date">September 2021 – October 2021</span>
+            </div>
+            <p class="role-meta">Industrial Operations / Maintenance Exposure</p>
+            <ul>
+              <li>Observed plant-wide production and maintenance workflows across machining, assembly, welding, paint, and heat-treatment areas.</li>
+              <li>Reviewed basic automation concepts involving PLCs, HMIs, sensors, and VFDs for conveyor/cooling applications.</li>
+              <li>Documented process observations and opportunities for practical control and automation improvements.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="left">
+            <h2>Skills & Toolbox</h2>
+            <p>
+              Core tools and technical areas I use to move from concept and simulation to implementation and validation.
+            </p>
+          </div>
+        </div>
+
+        <div class="skills-grid">
+          <div class="skill-card reveal">
+            <h3>Controls & Automation</h3>
+            <ul class="pill-list">
+              <li>Niagara N4</li>
+              <li>HVAC/BAS Logic</li>
+              <li>BACnet</li>
+              <li>Modbus</li>
+              <li>Schedules & Alarms</li>
+              <li>Operator Graphics</li>
+              <li>Functional Testing</li>
+            </ul>
+          </div>
+
+          <div class="skill-card reveal">
+            <h3>Embedded & Electronics</h3>
+            <ul class="pill-list">
+              <li>Arduino</li>
+              <li>ESP32</li>
+              <li>DAQ Systems</li>
+              <li>PCB Development</li>
+              <li>Sensor Interfacing</li>
+              <li>Wireless Feedback</li>
+              <li>Calibration</li>
+            </ul>
+          </div>
+
+          <div class="skill-card reveal">
+            <h3>Modeling & Simulation</h3>
+            <ul class="pill-list">
+              <li>MATLAB</li>
+              <li>Simulink</li>
+              <li>COMSOL</li>
+              <li>Ansys</li>
+              <li>SolidWorks</li>
+              <li>Power Electronics</li>
+              <li>System Modeling</li>
+            </ul>
+          </div>
+
+          <div class="skill-card reveal">
+            <h3>Robotics & Mechatronics</h3>
+            <ul class="pill-list">
+              <li>Autonomous Systems</li>
+              <li>Sensor Integration</li>
+              <li>Actuator Control</li>
+              <li>Line Following</li>
+              <li>Sequence Automation</li>
+              <li>Mechanical Integration</li>
+            </ul>
+          </div>
+
+          <div class="skill-card reveal">
+            <h3>Energy Systems</h3>
+            <ul class="pill-list">
+              <li>Battery Modeling</li>
+              <li>SOC Estimation</li>
+              <li>Internal Resistance Estimation</li>
+              <li>EV Power Conversion</li>
+              <li>DC-DC Converter Analysis</li>
+            </ul>
+          </div>
+
+          <div class="skill-card reveal">
+            <h3>Engineering Strengths</h3>
+            <ul class="pill-list">
+              <li>Technical Problem Solving</li>
+              <li>Data Analysis</li>
+              <li>Prototype Development</li>
+              <li>Testing & Validation</li>
+              <li>Documentation</li>
+              <li>Cross-domain Engineering</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="education">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="left">
+            <h2>Education</h2>
+            <p>
+              Academic foundation in electrical, computer, and mechatronics engineering with strong focus on modeling, sensing, energy systems, and automation.
+            </p>
+          </div>
+        </div>
+
+        <div class="edu-grid">
+          <div class="edu-card reveal">
+            <h3>Master of Engineering (M.Eng.) — Electrical & Computer Engineering</h3>
+            <div class="school">University of Windsor, Canada</div>
+            <span class="date">2023 – 2025</span>
+            <p>
+              Focused on power electronics, energy storage systems, automotive sensors, and computational engineering.
+            </p>
+            <ul>
+              <li>Completed advanced projects in battery fuel gauge modeling, converter simulation, and engineering analysis.</li>
+              <li>Achieved <strong style="color:white;">91.25% cumulative GPA</strong> with <strong style="color:white;">Honour Roll Distinction</strong>.</li>
+            </ul>
+          </div>
+
+          <div class="edu-card reveal">
+            <h3>Bachelor of Engineering (B.E.) — Mechatronics Engineering</h3>
+            <div class="school">National University of Sciences and Technology (NUST), Pakistan</div>
+            <span class="date">2018 – 2022</span>
+            <p>
+              Built a strong foundation in robotics, control systems, embedded electronics, sensors, automation, and mechanical design.
+            </p>
+            <ul>
+              <li>Contributed to PAK-UK ICRG-funded research on tactile sensors for robotic surgery.</li>
+              <li>Completed major projects in autonomous robotics, sensing, and engineering system design.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="contact-card reveal">
+          <h2>Let’s Build Something Meaningful</h2>
+          <p>
+            I’m interested in opportunities related to controls, automation, embedded systems, robotics, smart sensing, and energy-focused engineering work.
+          </p>
+
+          <div class="contact-actions">
+            <a class="btn btn-primary" href="mailto:huzefa.farooq999@gmail.com">Email Me</a>
+            <a class="btn btn-secondary" href="https://www.linkedin.com/in/muhammad-huzefa-farooq-3354341b1" target="_blank">Connect on LinkedIn</a>
+            <a class="btn btn-secondary" href="Muhammad_Huzefa_Farooq_Resume.pdf" target="_blank">View Resume</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © 2026 Muhammad Huzefa Farooq — Controls | Automation | Instrumentation | Mechatronics | Embedded Systems
+  </footer>
+
+  <script>
+    const revealElements = document.querySelectorAll('.reveal');
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.12
+    });
+
+    revealElements.forEach((el) => revealObserver.observe(el));
+  </script>
 </body>
 </html>
