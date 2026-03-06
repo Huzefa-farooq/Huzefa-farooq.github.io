@@ -581,7 +581,14 @@
       flex-wrap: wrap;
     }
 .project-media-large {
-  min-height: 420px;
+  min-height: 260px;
+  max-height: 320px;
+}
+
+.project-media-large img{
+  object-fit: contain;
+  background:#0c1428;
+  padding:20px;
 }
 
 .project-gallery {
@@ -904,6 +911,44 @@
         font-size: 2.35rem;
       }
     }
+
+
+.lightbox {
+  position: fixed;
+  inset:0;
+  background: rgba(5,10,20,0.92);
+  display: flex;
+  align-items:center;
+  justify-content:center;
+  z-index:9999;
+
+  opacity:0;
+  visibility:hidden;
+  transition:0.3s;
+}
+
+.lightbox.active{
+  opacity:1;
+  visibility:visible;
+}
+
+.lightbox img{
+  max-width:90%;
+  max-height:90%;
+  border-radius:12px;
+  box-shadow:0 20px 60px rgba(0,0,0,0.6);
+}
+
+.lightbox-close{
+  position:absolute;
+  top:30px;
+  right:40px;
+  font-size:30px;
+  color:white;
+  cursor:pointer;
+}
+
+</style>
   </style>
 </head>
 <body>
@@ -1481,5 +1526,39 @@
 
     revealElements.forEach((el) => revealObserver.observe(el));
   </script>
+
+</script>
+
+<!-- LIGHTBOX HTML -->
+<div class="lightbox" id="lightbox">
+  <span class="lightbox-close" onclick="closeLightbox()">✕</span>
+  <img id="lightbox-img">
+</div>
+
+<!-- LIGHTBOX SCRIPT -->
+<script>
+
+function openLightbox(src){
+  const box = document.getElementById("lightbox")
+  const img = document.getElementById("lightbox-img")
+
+  img.src = src
+  box.classList.add("active")
+}
+
+function closeLightbox(){
+  document.getElementById("lightbox").classList.remove("active")
+}
+
+document.querySelectorAll(".gallery-item img").forEach(img=>{
+  img.addEventListener("click", ()=>{
+    openLightbox(img.src)
+  })
+})
+
+</script>
+
+</body>
+</html>
 </body>
 </html>
