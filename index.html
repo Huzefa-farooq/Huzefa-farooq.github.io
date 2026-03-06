@@ -1550,15 +1550,20 @@ function closeLightbox(){
   document.getElementById("lightbox").classList.remove("active")
 }
 
-document.querySelectorAll(".gallery-item img").forEach(img=>{
-  img.addEventListener("click", ()=>{
+/* CLICK ANY PROJECT IMAGE */
+
+document.querySelectorAll(".project-media img, .gallery-item img").forEach(img => {
+
+  img.style.cursor = "zoom-in"
+
+  img.addEventListener("click", () => {
     openLightbox(img.src)
   })
+
 })
 
 </script>
 
 </body>
 </html>
-</body>
-</html>
+
